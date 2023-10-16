@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  platform-api
+  namespace: default
+  labels:
+    app:  platform-api
+spec:
+  selector:
+    matchLabels:
+      app: platform-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  platform-api
+    spec:
+      containers:
+      - name:  platform-api
+        image: registry.gitlab.com/cs302-2023/g3-team8/project/platform-api/main:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MONGOURI
+          value: "mongodb://mongo:mongo@mongodb.default.svc.cluster.local:27017"
+        - name: SERVER_PORT
+          value: "8080"
+        ports:
+        - containerPort:  8080
+          name:  platform-api

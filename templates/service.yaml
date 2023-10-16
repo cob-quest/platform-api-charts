@@ -1,0 +1,15 @@
+# dev
+apiVersion: v1
+kind: Service
+metadata:
+  name: platform-api
+  namespace: default
+spec:
+  selector:
+    app: platform-api
+  type: ClusterIP
+  ports:
+  - name: platform-api
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
