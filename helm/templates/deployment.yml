@@ -15,13 +15,18 @@ spec:
       labels:
         app:  platform-api
     spec:
+      volumes:
+        - name: cob-secrets-vol
+          secret:
+            secretName: cob-secrets
       containers:
       - name:  platform-api
         image: registry.gitlab.com/cs302-2023/g3-team8/project/platform-api/main:latest
         imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - name: cob-secrets-vol
+            mountPath: "/app/secrets"
         env:
-        - name: MONGOURI
-          value: "mongodb://mongo:mongo@mongodb.default.svc.cluster.local:27017"
         - name: SERVER_PORT
           value: "8080"
         ports:
