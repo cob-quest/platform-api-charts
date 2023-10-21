@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name:  platform-api
-  namespace: default
   labels:
     app:  platform-api
 spec:
@@ -25,7 +24,7 @@ spec:
         imagePullPolicy: IfNotPresent
         volumeMounts:
           - name: cob-secrets-vol
-            mountPath: "/app/secrets"
+            mountPath: /app/secrets
         env:
         - name: SERVER_PORT
           value: "8080"
