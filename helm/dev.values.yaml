@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   registry: registry.gitlab.com
-  repository: registry.gitlab.com/cs302-2023/g3-team8/project/challenge-service/main
+  repository: registry.gitlab.com/cs302-2023/g3-team8/project/platform-api/main
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
