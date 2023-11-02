@@ -90,11 +90,7 @@ volumes:
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts: 
   - name: cob-secrets
-    mountPath: "/app/secrets/.env"
-    subPath: .env
-  # - name: cob-secrets
-  #   mountPath: "/app/secrets/challenge-bucket-key.json"
-  #   subPath: challenge-bucket-key.json
+    mountPath: "/app/secrets"
 
 nodeSelector: {}
 
