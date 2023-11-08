@@ -9,7 +9,7 @@ image:
   repository: registry.gitlab.com/cs302-2023/g3-team8/project/platform-api/main
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: e6761531
+  tag: 9dfff6e9
 
 imagePullSecrets: 
   - name: docker-registry-credentials
